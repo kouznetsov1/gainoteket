@@ -7,13 +7,14 @@ interface Props {
   show: number;
 }
 
-var _window = typeof window !== "undefined" && window;
-
 export const Carousel: React.FC<Props> = ({ recipes, show }) => {
   const [currentIndex, setCurrentIndex] = useState(0);
   const [xPos, setXPos] = useState(0);
   const [xDelta, setXDelta] = useState(0);
   const [xPosDelta, setXPosDelta] = useState(0);
+  const carousel: HTMLElement | null = document.getElementById("carousel");
+  const handleDown = (e: MouseEvent) =>
+    (carousel!.dataset.mouseDownAt = e.clientX.toString());
 
   const nextSlide = () => {
     setCurrentIndex(
@@ -39,21 +40,7 @@ export const Carousel: React.FC<Props> = ({ recipes, show }) => {
     <div className="w-full flex flex-col">
       <div className="flex w-full relative">
         <div className="overflow-hidden w-full h-full flex">
-          <div
-            className="flex"
-            /*style={{
-              transform: `translateX(-${
-                currentIndex * (100 / recipes.length)
-              }%)`,
-            }}*/
-            style={{
-              transform: `translateX(-${xPosDelta}px)`,
-            }}
-            onMouseDownCapture={(e) => handleDownCapture(e)}
-            onMouseUpCapture={(e) => handleUpCapture(e)}
-            onTouchStartCapture={(e) => handleDownCapture(e)}
-            onTouchEndCapture={(e) => handleUpCapture(e)}
-          >
+          <div className="flex" data-mouse-down-at="0" id="carousel">
             {recipes.map((recipe, index) => (
               <div
                 key={index}
