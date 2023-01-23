@@ -8,7 +8,12 @@ export const RecipeCard: React.FC<Props> = ({ recipe }) => {
   return (
     <div className="m-2 w-56 my-4 border-2 border-white">
       <div className="text-white">
-        <img className="rounded-3xl" src={recipe.image} alt={recipe.name} />
+        <img
+          className="rounded-3xl"
+          src={recipe.image}
+          alt={recipe.name}
+          draggable={false}
+        />
         <div className="mx-2">
           <h1 className="text-lg font-medium my-2">{recipe.name}</h1>
           <div className="whitespace-pre">

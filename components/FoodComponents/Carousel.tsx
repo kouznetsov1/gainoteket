@@ -8,72 +8,85 @@ interface Props {
 }
 
 export const Carousel: React.FC<Props> = ({ recipes, show }) => {
-  const [currentIndex, setCurrentIndex] = useState(0);
-  const [xPos, setXPos] = useState(0);
-  const [xDelta, setXDelta] = useState(0);
-  const [xPosDelta, setXPosDelta] = useState(0);
-  const carousel: HTMLElement | null = document.getElementById("carousel");
-  const handleDown = (e: MouseEvent) =>
-    (carousel!.dataset.mouseDownAt = e.clientX.toString());
+  const [carousel, setCarousel] = useState<HTMLElement | null>(null);
 
-  const nextSlide = () => {
-    setCurrentIndex(
-      currentIndex + 4 === recipes.length - 1 ? currentIndex : currentIndex + 1
+  useEffect(() => {
+    setCarousel(document.getElementById("carousel"));
+  }, []);
+
+  const handleOnDown = (clientX: number) => {
+    if (carousel) carousel.dataset.mouseDownAt = clientX.toString();
+  };
+
+  const handleOnUp = () => {
+    if (!carousel) return;
+    console.log(carousel);
+    carousel.dataset.mouseDownAt = "0";
+    carousel.dataset.prevPercentage = carousel.dataset.percentage;
+  };
+
+  const handleOnMove = (clientX: number) => {
+    if (!carousel) return;
+    if (carousel.dataset.mouseDownAt === "0") return;
+
+    const mouseDelta: number =
+      parseFloat(carousel.dataset.mouseDownAt!) - clientX;
+    const maxDelta: number = window.innerWidth / 2;
+
+    const percentage: number = (mouseDelta / maxDelta) * -100,
+      nextPercentageUnconstrained =
+        parseFloat(carousel.dataset.prevPercentage!) + percentage,
+      nextPercentage = Math.max(Math.min(nextPercentageUnconstrained, 0), -100);
+
+    carousel.dataset.percentage = nextPercentage.toString();
+
+    carousel.animate(
+      {
+        transform: `translateX(${nextPercentage}%)`,
+      },
+      { duration: 1200, fill: "forwards" }
     );
+
+    for (const card of Array.from(
+      carousel.getElementsByClassName("carousel-item")
+    )) {
+      card.animate(
+        {
+          objectPosition: `${100 + nextPercentage}% center`,
+        },
+        { duration: 1200, fill: "forwards" }
+      );
+    }
   };
 
-  const prevSlide = () => {
-    setCurrentIndex(currentIndex === 0 ? 0 : currentIndex - 1);
-  };
+  window.onmousedown = (e) => handleOnDown(e.clientX);
+  window.ontouchstart = (e) => handleOnDown(e.touches[0].clientX);
 
-  const handleDownCapture = (e: any) => {
-    setXPos(e.clientX);
-  };
+  window.onmouseup = () => handleOnUp();
+  window.ontouchend = () => handleOnUp();
 
-  const handleUpCapture = (e: any) => {
-    console.log(xPos, e.clientX);
-    setXDelta(e.clientX - xPos);
-    console.log("xDelta: ", xDelta);
-  };
+  window.onmousemove = (e) => handleOnMove(e.clientX);
+  window.ontouchmove = (e) => handleOnMove(e.touches[0].clientX);
 
   return (
-    <div className="w-full flex flex-col">
-      <div className="flex w-full relative">
-        <div className="overflow-hidden w-full h-full flex">
-          <div className="flex" data-mouse-down-at="0" id="carousel">
-            {recipes.map((recipe, index) => (
-              <div
-                key={index}
-                className="border-2 w-64"
-                /*style={{ width: `${100 / show}%` }}*/
-              >
-                <p className="text-white text-center">{index}</p>
-                {/*<h1 className="text-white">{index}</h1>*/}
-                <RecipeCard recipe={recipe} />
-              </div>
-            ))}
+    <div className="overflow-hidden w-full h-full border-2 flex">
+      <div
+        className="flex"
+        data-mouse-down-at="0"
+        id="carousel"
+        data-prev-percentage="0"
+      >
+        {recipes.map((recipe, index) => (
+          <div
+            key={index}
+            className="border-2 w-64 carousel-item"
+            /*style={{ width: `${100 / show}%` }}*/
+          >
+            <p className="text-white text-center">{index}</p>
+            {/*<h1 className="text-white">{index}</h1>*/}
+            <RecipeCard recipe={recipe} />
           </div>
-        </div>
-      </div>
-      <div className="text-white w-full m-auto text-center mb-2 mt-8">
-        {currentIndex > 0 ? (
-          <button className="carousel-button mx-2" onClick={prevSlide}>
-            &lt;
-          </button>
-        ) : (
-          <button className="carousel-button mx-2 opacity-0" disabled>
-            &lt;
-          </button>
-        )}
-        {currentIndex < recipes.length - show - 1 ? (
-          <button className="carousel-button mx-2" onClick={nextSlide}>
-            &gt;
-          </button>
-        ) : (
-          <button className="carousel-button mx-2 opacity-0" disabled>
-            &gt;
-          </button>
-        )}
+        ))}
       </div>
     </div>
   );
