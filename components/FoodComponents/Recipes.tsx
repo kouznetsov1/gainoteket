@@ -3,7 +3,7 @@ import { breakfastRecipes, lunchRecipes, dinnerRecipes } from "./data";
 import { Carousel } from "./Carousel";
 
 export const Recipes: React.FC = () => {
-  const categories: string[] = ["Frukost", "Lunch", "Middag"];
+  const categories: string[] = ["Breakfast", "Lunch", "Dinner"];
   const show: number = 4;
   return (
     <div>
@@ -18,13 +18,13 @@ export const Recipes: React.FC = () => {
                 <h2 className="text-white text-2xl">{category}</h2>
               </div>
               <div>
-                {category === "Frukost" && (
+                {category === "Breakfast" && (
                   <Carousel recipes={breakfastRecipes} show={show} />
                 )}
                 {category === "Lunch" && (
                   <Carousel recipes={lunchRecipes} show={show} />
                 )}
-                {category === "Middag" && (
+                {category === "Dinner" && (
                   <Carousel recipes={dinnerRecipes} show={show} />
                 )}
               </div>

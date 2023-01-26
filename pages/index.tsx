@@ -109,6 +109,71 @@ function SiteShowcase() {
   );
 }
 
+function SiteShowcase2() {
+  const data: Array<{
+    title: string;
+    description: string;
+    image: StaticImageData;
+  }> = [
+    {
+      title: "1. Räkna ut ditt kaloribehov",
+      description:
+        "Med prooly:s egna kaloriräknare räknar du enkelt ut vilka behov du har för dina mål.",
+      image: require("../public/index_placeholder.jpg"),
+    },
+    {
+      title: "2. Välj vad du vill äta",
+      description:
+        "Här väljer du vad du vill äta och ändrar näringsvärden för att passa det du valde i steg 1.",
+      image: require("../public/index_placeholder.jpg"),
+    },
+    {
+      title: "3. Kostplan färdig!",
+      description: "Exportera din kostplan och nå dina mål!",
+      image: require("../public/index_placeholder.jpg"),
+    },
+  ];
+  return (
+    <div className="py-12 pt-24">
+      {data.map((item, index) => {
+        return index % 2 === 0 ? (
+          <div className="mb-32 w-3/4 flex m-auto justify-center" key={index}>
+            <div className="text-center py-2 flex m-auto">
+              <div className="bg-gray-200 w-96 h-60 flex m-auto">
+                <span className="text-black text-4xl flex m-auto">Bild</span>
+              </div>
+              <div className="w-[30rem] m-auto ml-32">
+                <div className="mb-4 text-secondary">
+                  <span className="text-4xl font-bold my-4">{item.title}</span>
+                </div>
+                <div className="">
+                  <span className="text-lg">{item.description}</span>
+                </div>
+              </div>
+            </div>
+          </div>
+        ) : (
+          <div className="mb-32 w-3/4 flex m-auto justify-center" key={index}>
+            <div className="text-center py-2 flex m-auto">
+              <div className="w-[30rem] m-auto mr-32">
+                <div className="mb-4 text-secondary">
+                  <span className="text-4xl font-bold my-4">{item.title}</span>
+                </div>
+                <div className="">
+                  <span className="text-lg">{item.description}</span>
+                </div>
+              </div>
+              <div className="bg-gray-200 w-96 h-56 flex m-auto">
+                <span className="text-black text-4xl flex m-auto">Bild</span>
+              </div>
+            </div>
+          </div>
+        );
+      })}
+    </div>
+  );
+}
+
 function FormSection() {
   return (
     <div className="w-3/4 my-6 grid m-auto justify-center">
