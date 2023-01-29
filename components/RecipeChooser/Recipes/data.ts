@@ -1,4 +1,4 @@
-import { Recipe } from "./props";
+import { Recipe } from "../props";
 
 const lunchRecipe: Recipe = {
   name: "Kyckling med ris",

@@ -1,4 +1,4 @@
-import { Recipe as RecipeProps } from "./props";
+import { Recipe as RecipeProps } from "../props";
 
 interface Props {
   recipe: RecipeProps;
@@ -9,13 +9,13 @@ export const RecipeCard: React.FC<Props> = ({ recipe }) => {
     <div className="m-2 my-4">
       <div className="text-white">
         <img
-          className="rounded-3xl"
+          className="rounded-2xl"
           src={recipe.image}
           alt={recipe.name}
           draggable={false}
         />
         <div className="mx-2">
-          <h1 className="text-lg font-medium my-2">{recipe.name}</h1>
+          <h1 className="text-xl font-medium my-2">{recipe.name}</h1>
           <div className="whitespace-pre">
             <div className="flex justify-between">
               <div>

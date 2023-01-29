@@ -37,11 +37,11 @@ const BigScreenNavbar = (): JSX.Element => {
     <div className="h-20 flex text-white bg-black">
       <div className="w-5/6 text-center m-auto">
         <div className="flex items-center justify-between">
-          <div className="w-40">
-            <span className="text-3xl font-extrabold uppercase">
+          <Link href="/">
+            <button className="text-3xl font-extrabold uppercase">
               gainoteket
-            </span>
-          </div>
+            </button>
+          </Link>
           <div className="flex items-center text-center">
             <div className="flex">
               {data.map((item, key) => (

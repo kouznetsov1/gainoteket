@@ -1,5 +1,5 @@
 import { Stepper, Button } from "@components";
-import { Recipes } from "@components";
+import { Recipes, ChosenRecipes } from "@components";
 
 export default function RecipesPage() {
   return (
@@ -12,8 +12,8 @@ export default function RecipesPage() {
           <div className="lg:w-2/3 lg:mr-4">
             <Recipes />
           </div>
-          <div className="border-2 rounded-md lg:w-1/3 mt-4">
-            <p className="text-4xl text-white">Calories & macros</p>
+          <div className="rounded-md lg:w-1/3">
+            <ChosenRecipes />
           </div>
         </div>
       </div>
