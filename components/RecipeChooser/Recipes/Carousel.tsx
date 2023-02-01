@@ -36,7 +36,7 @@ export const Carousel: React.FC<Props> = ({
 
   return (
     <div className="w-full flex flex-col my-4">
-      <div className="border-2 border-neutral-800 rounded-md w-full flex overflow-auto">
+      <div className="w-full flex overflow-auto">
         <div className="flex">
           {visibleRecipes.map((recipe, index) => (
             <div

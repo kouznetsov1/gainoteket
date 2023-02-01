@@ -15,9 +15,11 @@ export const Recipes: React.FC = () => {
       <div>
         {categories.map((category) => {
           return (
-            <div className="my-4">
+            <div className="my-8 border-2 border-neutral-800 rounded-md">
               <div>
-                <h2 className="text-white text-2xl mt-6">{category}</h2>
+                <h2 className="text-white text-3xl mt-6 mx-4 -mb-6">
+                  {category}
+                </h2>
               </div>
               <div>
                 {category === "Frukost" && (
