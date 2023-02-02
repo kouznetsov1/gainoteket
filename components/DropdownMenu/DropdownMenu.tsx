@@ -7,10 +7,15 @@ interface DropdownOption {
 
 interface DropdownProps {
   options: DropdownOption[];
+  parentState: any;
 }
 
-export const DropDownMenu: React.FC<DropdownProps> = ({ options }) => {
+export const DropDownMenu: React.FC<DropdownProps> = ({
+  options,
+  parentState,
+}) => {
   const [open, setOpen] = useState(false);
+  const [selectedOption, setSelectedOption] = useState(options[0]);
 
   useEffect(() => {
     const handleClickOutside = (event: MouseEvent) => {
@@ -28,6 +33,12 @@ export const DropDownMenu: React.FC<DropdownProps> = ({ options }) => {
     };
   }, [open]);
 
+  const handleSelect = (option: DropdownOption) => {
+    setSelectedOption(option);
+    parentState(option.value);
+    setOpen(false);
+  };
+
   return (
     <div className="relative inline-block text-left" id="dropdown">
       <div>
@@ -39,7 +50,7 @@ export const DropDownMenu: React.FC<DropdownProps> = ({ options }) => {
           aria-haspopup="true"
           onClick={() => setOpen(!open)}
         >
-          Options
+          {selectedOption.label}
           <svg
             className="-mr-1 ml-2 h-5 w-5"
             xmlns="http://www.w3.org/2000/svg"
@@ -57,7 +68,7 @@ export const DropDownMenu: React.FC<DropdownProps> = ({ options }) => {
       </div>
       {open && (
         <div
-          className="absolute right-0 z-10 mt-2 w-56 origin-top-right rounded-md bg-white shadow-lg ring-1 ring-black ring-opacity-5 focus:outline-none"
+          className="absolute right-0 z-10 mt-2 w-56 h-80 overflow-y-auto origin-top-right rounded-md bg-white shadow-lg ring-1 ring-black ring-opacity-5 focus:outline-none"
           role="menu"
           aria-orientation="vertical"
           aria-labelledby="menu-button"
@@ -71,7 +82,9 @@ export const DropDownMenu: React.FC<DropdownProps> = ({ options }) => {
                 role="menuitem"
                 id={option.value}
                 tabIndex={-1}
-                onClick={() => setOpen(false)}
+                onClick={() => {
+                  handleSelect(option);
+                }}
               >
                 {option.label}
               </a>

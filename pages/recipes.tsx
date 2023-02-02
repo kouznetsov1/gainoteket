@@ -12,7 +12,7 @@ export default function RecipesPage() {
           <div className="lg:w-2/3 lg:mr-4">
             <Recipes />
           </div>
-          <div className="rounded-md lg:w-1/3">
+          <div className="rounded-md lg:w-1/3 h-full">
             <ChosenRecipes />
           </div>
         </div>

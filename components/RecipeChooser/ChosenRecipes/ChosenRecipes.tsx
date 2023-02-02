@@ -7,10 +7,10 @@ interface DropdownOption {
 }
 
 export const ChosenRecipes: React.FC = () => {
-  const [nWeekDays, setNWeekDays] = useState(0);
-  const nDays = 7;
-
+  const [days, setDays] = useState(1);
+  const nDays = 14;
   const options: DropdownOption[] = [];
+  const categories: string[] = ["Frukost", "Lunch", "Middag"];
 
   for (let i = 1; i <= nDays; i++) {
     if (i === 1)
@@ -23,10 +23,44 @@ export const ChosenRecipes: React.FC = () => {
       <div>
         <h1 className="text-4xl">Calories & macros</h1>
       </div>
-      <div className="flex">
-        <span className="text-lg">Utspritt på</span>
+      <div className="flex mt-6 justify-between">
+        <span className="text-lg">Välj antal dagar</span>
         <div className="mx-2">
-          <DropDownMenu options={options} />
+          <DropDownMenu options={options} parentState={setDays} />
+        </div>
+      </div>
+      <div className="text-lg mt-4">
+        <div>
+          <h2 className="text-2xl mt-6 font-bold">Totalt</h2>
+        </div>
+        <div className="flex flex-col">
+          <span className="my-1">Kalorier: </span>
+          <span className="my-1">Protein: </span>
+          <span className="my-1">Kolhydrater: </span>
+          <span className="my-1">Fett: </span>
+        </div>
+      </div>
+      <div>
+        <div>
+          {categories.map((category) => {
+            return (
+              <div className="my-8">
+                <div>
+                  <h2 className="text-2xl mt-6 font-bold">{category}</h2>
+                </div>
+                <div>
+                  <div className="flex justify-between text-lg">
+                    <div className="flex flex-col">
+                      <span className="my-1">Kalorier: </span>
+                      <span className="my-1">Protein: </span>
+                      <span className="my-1">Kolhydrater: </span>
+                      <span className="my-1">Fett: </span>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            );
+          })}
         </div>
       </div>
     </div>
