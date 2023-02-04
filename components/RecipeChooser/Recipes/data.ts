@@ -1,4 +1,11 @@
-import { Recipe } from "../props";
+import { Recipe } from "types/recipes";
+
+enum Category {
+  breakfast,
+  lunch,
+  dinner,
+  snack,
+}
 
 const lunchRecipe: Recipe = {
   name: "Kyckling med ris",
@@ -20,6 +27,7 @@ const lunchRecipe: Recipe = {
   protein: 100,
   fat: 100,
   carbs: 100,
+  category: Category.lunch,
 };
 
 const breakfastRecipe: Recipe = {
@@ -42,6 +50,7 @@ const breakfastRecipe: Recipe = {
   protein: 100,
   fat: 100,
   carbs: 100,
+  category: Category.breakfast,
 };
 
 const dinnerRecipe: Recipe = {
@@ -64,6 +73,7 @@ const dinnerRecipe: Recipe = {
   protein: 100,
   fat: 100,
   carbs: 100,
+  category: Category.dinner,
 };
 
 // Add recipe 8 times for testing

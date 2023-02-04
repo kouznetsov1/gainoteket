@@ -1,5 +1,5 @@
 import { useAtom } from "jotai";
-import { macroAtom } from "components/atoms";
+import { macroAtom } from "types/atoms";
 import { Button } from "@components";
 
 interface Props {

@@ -1,3 +1,10 @@
+export interface MacroProps {
+  calories: number;
+  protein: number;
+  carbs: number;
+  fat: number;
+}
+
 export interface Recipe {
   name: string;
   ingredients: Ingredient[];
@@ -6,6 +13,7 @@ export interface Recipe {
   protein: number;
   fat: number;
   carbs: number;
+  category: number;
 }
 
 export interface Ingredient {

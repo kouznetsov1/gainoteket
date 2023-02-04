@@ -1,5 +1,5 @@
-import { CalculatorProps } from "./props";
-import { MacroProps } from "components/props";
+import { CalculatorProps } from "types/user";
+import { MacroProps } from "types/recipes";
 
 export function calculateMacros(props: CalculatorProps) {
   var bmr: number;

@@ -1,5 +1,10 @@
 import { useState, useEffect } from "react";
 import { DropDownMenu } from "components";
+import { macroAtom, chosenRecipesAtom } from "types/atoms";
+import { CalculatorProps } from "types/user";
+import { MacroProps } from "types/recipes";
+import { useAtom } from "jotai";
+import { calculateMacros, AllMacros } from "./helpers";
 
 interface DropdownOption {
   value: string;
@@ -11,12 +16,21 @@ export const ChosenRecipes: React.FC = () => {
   const nDays = 14;
   const options: DropdownOption[] = [];
   const categories: string[] = ["Frukost", "Lunch", "Middag"];
+  const [macros] = useAtom(macroAtom);
+  const [allMacros, setAllMacros] = useState<AllMacros>();
+  const [chosenRecipes] = useAtom(chosenRecipesAtom);
+
+  useEffect(() => {
+    setAllMacros(calculateMacros(chosenRecipes));
+  }, [chosenRecipes]);
 
   for (let i = 1; i <= nDays; i++) {
     if (i === 1)
       options.push({ value: i.toString(), label: i.toString() + " dag" });
     else options.push({ value: i.toString(), label: i.toString() + " dagar" });
   }
+
+  if (!allMacros) return <div>Loading...</div>;
 
   return (
     <div className="border-2 h-full border-neutral-800 rounded-md p-2 text-white">
@@ -34,10 +48,9 @@ export const ChosenRecipes: React.FC = () => {
           <h2 className="text-2xl mt-6 font-bold">Totalt</h2>
         </div>
         <div className="flex flex-col">
-          <span className="my-1">Kalorier: </span>
-          <span className="my-1">Protein: </span>
-          <span className="my-1">Kolhydrater: </span>
-          <span className="my-1">Fett: </span>
+          <div className="flex flex-row justify-between my-1">
+            {renderTotalMacros(allMacros?.totalMacros, macros, days)}
+          </div>
         </div>
       </div>
       <div>
@@ -63,6 +76,37 @@ export const ChosenRecipes: React.FC = () => {
           })}
         </div>
       </div>
+    </div>
+  );
+};
+
+const renderTotalMacros = (
+  totalMacros: MacroProps,
+  macros: MacroProps,
+  days: number
+) => {
+  return (
+    <div className="flex flex-col w-full">
+      {Object.entries(totalMacros).map(([key, value]) => {
+        return (
+          <div className="flex flex-row justify-between my-1">
+            <span className="capitalize">{key}:</span>
+            <div>
+              <span
+                className="my-1"
+                style={
+                  value / days >= macros[key]
+                    ? { color: "rgb(16 185 129)" }
+                    : { color: "red" }
+                }
+              >
+                {Math.round(value / days)}
+              </span>
+              <span className="text-secondary"> / {macros[key]}</span>
+            </div>
+          </div>
+        );
+      })}
     </div>
   );
 };

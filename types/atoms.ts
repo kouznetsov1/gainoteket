@@ -1,5 +1,5 @@
 import { atom } from "jotai";
-import { MacroProps } from "./props";
+import { MacroProps, Recipe } from "types/recipes";
 
 export const macroAtom = atom<MacroProps>({
   calories: 0,
@@ -7,3 +7,5 @@ export const macroAtom = atom<MacroProps>({
   carbs: 0,
   fat: 0,
 });
+
+export const chosenRecipesAtom = atom<Recipe[]>([]);

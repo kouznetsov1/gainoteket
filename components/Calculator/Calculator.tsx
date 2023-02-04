@@ -1,14 +1,19 @@
-import { CalculatorProps } from "./props";
-import { CalculatorButtons } from "./CalculatorButtons";
+// Modules
 import { useEffect, useState } from "react";
+import { useAtom } from "jotai";
+
+// Components
+import { CalculatorButtons } from "./CalculatorButtons";
 import { Questionnaire } from "./Questionnaire";
 import { SelfFill } from "./SelfFill";
 import { Button } from "@components";
 import { Results } from "./Results";
-import { useAtom } from "jotai";
-import { macroAtom } from "./../atoms";
-import { MacroProps } from "components/props";
 import { calculateMacros } from "./calculateMacros";
+
+// Props and state
+import { MacroProps } from "types/recipes";
+import { macroAtom } from "types/atoms";
+import { CalculatorProps } from "types/user";
 
 export const Calculator: React.FC = () => {
   const [useCalculator, setUseCalculator] = useState(true);

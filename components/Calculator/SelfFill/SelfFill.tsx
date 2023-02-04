@@ -1,7 +1,7 @@
 import { useEffect, useState } from "react";
 import { data } from "./data";
 import { useAtom } from "jotai";
-import { macroAtom } from "components/atoms";
+import { macroAtom } from "types/atoms";
 
 export const SelfFill: React.FC = () => {
   const [macros, setMacros] = useAtom(macroAtom);
