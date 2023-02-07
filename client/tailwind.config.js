@@ -6,18 +6,13 @@ module.exports = {
   ],
   theme: {
     extend: {
-      colors: {
-        primary: "#065f46",
-        secondary: "#059669",
-        accent: "#6ee7b7",
-      },
       animation: {
         wave: "wave 2s ease-in-out infinite",
       },
       colors: {
-        primary: "#047857",
-        secondary: "#10b981",
-        tertiary: "#6ee7b7",
+        primary: "#15803d",
+        secondary: "#22c55e",
+        tertiary: "#86efac",
       },
       keyframes: {
         wave: {

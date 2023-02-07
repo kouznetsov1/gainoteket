@@ -1,5 +1,5 @@
 import { useState, useEffect } from "react";
-import { DropDownMenu } from "components";
+import { DropDownMenu, Button } from "components";
 import { macroAtom, chosenRecipesAtom } from "types/atoms";
 import { MacroProps } from "types/recipes";
 import { useAtom } from "jotai";
@@ -32,9 +32,9 @@ export const ChosenRecipes: React.FC = () => {
   if (!allMacros) return <div>Loading...</div>;
 
   return (
-    <div className="border-2 h-full border-neutral-800 rounded-md p-2 text-white text-lg">
+    <div className="border-2 h-full border-neutral-900 rounded-xl p-4 text-neutral-200 text-lg shadow-xl bg-neutral-800 mb-8">
       <div>
-        <h1 className="text-4xl">Calories & macros</h1>
+        <h1 className="text-3xl font-semibold">Calories & macros</h1>
       </div>
       <div className="flex mt-6 justify-between">
         <span className="text-lg">Välj antal dagar</span>
@@ -72,6 +72,9 @@ export const ChosenRecipes: React.FC = () => {
             })}
         </div>
       </div>
+      <div className="mt-6 mb-4 flex justify-center">
+        <Button text="gå vidare" url="/" />
+      </div>
     </div>
   );
 };
@@ -91,7 +94,7 @@ const renderTotalMacros = (
               <span
                 style={
                   value / days >= macros[key as keyof MacroProps]
-                    ? { color: "rgb(16 185 129)" }
+                    ? { color: "rgb(34 197 94)" }
                     : { color: "red" }
                 }
               >

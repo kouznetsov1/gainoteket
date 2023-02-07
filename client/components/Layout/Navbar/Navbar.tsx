@@ -15,11 +15,11 @@ export const NavBar = (props: InterfaceProps): JSX.Element => {
   var onHomePage: boolean = false;
 
   return (
-    <div className="z-0 w-full ">
+    <div className="z-0 w-full border-b-[1px] border-neutral-700">
       <div className="lg:hidden">
         <MobileNavbar setNavMenuOpen={props.setNavMenuOpen} />
       </div>
-      <div className="hidden lg:block z-20 bg-black bg-opacity-20 w-full absolute">
+      <div className="hidden lg:block bg-neutral-900">
         <BigScreenNavbar />
       </div>
     </div>
@@ -34,7 +34,7 @@ const BigScreenNavbar = (): JSX.Element => {
     { url: "/sign-in", name: "Logga in" },
   ];
   return (
-    <div className="h-20 flex text-white">
+    <div className="h-20 flex text-neutral-100">
       <div className="w-5/6 text-center m-auto">
         <div className="flex items-center justify-between">
           <Link href="/">
@@ -42,18 +42,14 @@ const BigScreenNavbar = (): JSX.Element => {
               gainoteket
             </button>
           </Link>
-          <div className="flex items-center text-center">
-            <div className="flex">
-              {data.map((item, key) => (
-                <Link href={item.url} key={key}>
-                  <div className="">
-                    <button className="w-32 uppercase font-bold text-center m-auto hover:transition-all hover:duration-300 hover:ease-in-out hover:bg-gradient-to-br hover:bg-primary rounded-md p-3">
-                      {item.name}
-                    </button>
-                  </div>
-                </Link>
-              ))}
-            </div>
+          <div className="flex items-center text-center font-semibold text-lg">
+            {data.map((item, key) => (
+              <Link href={item.url} key={key}>
+                <button className="w-32 uppercase font-bold text-center m-auto hover:transition-all hover:duration-300 hover:ease-in-out hover:bg-gradient-to-br hover:bg-primary rounded-md p-3">
+                  {item.name}
+                </button>
+              </Link>
+            ))}
           </div>
         </div>
       </div>
@@ -77,9 +73,9 @@ function BurgerMenu() {
   return (
     <div className="flex">
       <div className="space-y-2 m-2">
-        <span className="block w-8 h-0.5 bg-white"></span>
-        <span className="block w-8 h-0.5 bg-white"></span>
-        <span className="block w-8 h-0.5 bg-white"></span>
+        <span className="block w-8 h-0.5 bg-neutral-200"></span>
+        <span className="block w-8 h-0.5 bg-neutral-200"></span>
+        <span className="block w-8 h-0.5 bg-neutral-200"></span>
       </div>
     </div>
   );
@@ -89,8 +85,8 @@ function Logo() {
   return (
     <Link href="/">
       <button className="">
-        <div className="border-2 border-white rounded-lg">
-          <p className="mx-3 my-1 text-white font-extrabold uppercase">
+        <div className="border-2 border-neutral-200 rounded-lg">
+          <p className="mx-3 my-1 text-neutral-200 font-extrabold uppercase">
             Gainoteket
           </p>
         </div>

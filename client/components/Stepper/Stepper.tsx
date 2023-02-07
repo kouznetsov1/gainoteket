@@ -12,7 +12,7 @@ export const Stepper: React.FC<StepperProps> = (props) => {
           <li
             className="relative w-40 after:content-[''] after:absolute after:left-[40%]
             after:top-[200%] after:w-8 after:h-8 after:bg-primary
-            after:rounded-full after:z-50 after:border-4 after:border-primary"
+            after:rounded-full after:z-50 after:border-4 after:border-green-900"
           ></li>
         );
       } else if (i === props.steps - 1) {
@@ -31,7 +31,7 @@ export const Stepper: React.FC<StepperProps> = (props) => {
             className="relative w-40
             before:content-[''] before:absolute before:left-[-40%] before:top-[calc(200%+0.8rem)] before:w-full before:h-1 
             before:bg-primary
-            after:content-[''] after:border-4 after:border-primary after:absolute after:left-[40%] after:top-[200%] after:w-8 after:h-8 
+            after:content-[''] after:border-4 after:border-green-900 after:absolute after:left-[40%] after:top-[200%] after:w-8 after:h-8 
             after:bg-primary after:rounded-full after:z-50"
           ></li>
         );

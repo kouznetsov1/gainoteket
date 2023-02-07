@@ -2,18 +2,6 @@
 @tailwind components;
 @tailwind utilities;
 
-@layer components {
-  .carousel-button {
-    color: white;
-    width: 48px;
-    height: 36px;
-    border-radius: 8px;
-    background-color: #047857;
-    border: 1px solid black;
-    font-weight: 500;
-  }
-}
-
 @layer base {
   .font-outline-2 {
     -webkit-text-stroke: 2px black;

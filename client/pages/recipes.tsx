@@ -16,9 +16,6 @@ export default function RecipesPage() {
             <div>
               <ChosenRecipes />
             </div>
-            <div className="my-6 flex justify-center">
-              <Button text="gå vidare" url="/" inverted={true} />
-            </div>
           </div>
         </div>
       </div>

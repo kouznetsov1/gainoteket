@@ -33,9 +33,9 @@ export const RecipeCard: React.FC<Props> = ({ recipe }) => {
 
   return (
     <div className="m-2 my-4">
-      <div className="text-white">
+      <div className="text-neutral-200">
         <img
-          className="rounded-2xl"
+          className="rounded-xl w-11/12 m-auto my-4"
           src={recipe.image}
           alt={recipe.name}
           draggable={false}

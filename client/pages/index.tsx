@@ -14,27 +14,25 @@ const Home: NextPage = () => {
 function BigImage() {
   return (
     <div className="relative z-10">
-      <div className="h-[600px] lg:h-[896px] bg-[url('../public/bg2.png')] bg-center bg-cover">
-        <div className="m-auto flex text-center h-full">
-          <div className="flex flex-col border-2 border-neutral-900 w-1/2 border-opacity-50 h-96 m-auto rounded-lg bg-black bg-opacity-40 shadow-2xl">
-            <div className="m-auto flex flex-col items-center">
-              <div className="w-2/3">
-                <h1 className="text-3xl lg:text-5xl uppercase font-extrabold text-center m-auto justify-center text-white">
-                  att äta hälsosamt är en resa
-                </h1>
-                <div className="mt-4">
-                  <span className="text-xl lg:text-2xl font-bold text-center m-auto justify-center text-white">
-                    Låt Gainoteket vara din guide!
-                  </span>
-                </div>
+      <div className="m-auto flex text-center h-full">
+        <div className="flex flex-col border-2 border-neutral-900 w-1/2 border-opacity-50 h-96 m-auto rounded-lg bg-black bg-opacity-40 shadow-2xl">
+          <div className="m-auto flex flex-col items-center">
+            <div className="w-2/3">
+              <h1 className="text-3xl lg:text-5xl uppercase font-extrabold text-center m-auto justify-center text-white">
+                att äta hälsosamt är en resa
+              </h1>
+              <div className="mt-4">
+                <span className="text-xl lg:text-2xl font-bold text-center m-auto justify-center text-white">
+                  Låt Gainoteket vara din guide!
+                </span>
               </div>
-              <div className="my-8">
-                <StandardButton
-                  url="/calculator"
-                  inverted={false}
-                  text="Sätt igång"
-                />
-              </div>
+            </div>
+            <div className="my-8">
+              <StandardButton
+                url="/calculator"
+                inverted={false}
+                text="Sätt igång"
+              />
             </div>
           </div>
         </div>
