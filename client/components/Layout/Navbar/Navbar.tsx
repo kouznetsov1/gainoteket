@@ -16,7 +16,7 @@ export const NavBar = (props: InterfaceProps): JSX.Element => {
 
   return (
     <div className="z-0 w-full border-b-[1px] border-neutral-700">
-      <div className="lg:hidden">
+      <div className="lg:hidden absolute w-full">
         <MobileNavbar setNavMenuOpen={props.setNavMenuOpen} />
       </div>
       <div className="hidden lg:block bg-neutral-900">
@@ -60,7 +60,7 @@ const BigScreenNavbar = (): JSX.Element => {
 const MobileNavbar = (props: InterfaceProps): JSX.Element => {
   return (
     <div
-      className="flex justify-between mx-auto px-6 py-2 sticky top-0 bg-black"
+      className="flex justify-between mx-auto px-6 py-2 sticky top-0 bg-neutral-800 bg-opacity-60"
       onClick={() => props.setNavMenuOpen(true)}
     >
       <Logo />
@@ -85,7 +85,7 @@ function Logo() {
   return (
     <Link href="/">
       <button className="">
-        <div className="border-2 border-neutral-200 rounded-lg">
+        <div className="border-2 border-primary rounded-lg">
           <p className="mx-3 my-1 text-neutral-200 font-extrabold uppercase">
             Gainoteket
           </p>

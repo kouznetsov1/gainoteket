@@ -13,7 +13,7 @@ export const MobileNavBar = (props: InterfaceProps): JSX.Element => {
     { url: "/login", name: "Logga in / Registrera" },
   ];
   return (
-    <div className="bg-black min-h-screen">
+    <div className="bg-neutral-800 min-h-screen">
       <div className="text-white">
         <div className="flex flex-col text-4xl">
           <div>

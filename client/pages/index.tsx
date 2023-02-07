@@ -1,12 +1,39 @@
 import type { NextPage } from "next";
+import Image from "next/image";
 import { StaticImageData } from "next/image";
-import StandardButton from "../components/Button/Button";
+import { Button } from "@components";
 
 const Home: NextPage = () => {
   return (
-    <div className="">
-      <BigImage />
-      <SiteShowcase />
+    <div className="h-96 min-h-[calc(100vh-130px)]">
+      <div className="hidden lg:block">
+        <BigImage />
+        <SiteShowcase />
+      </div>
+      <div className="lg:hidden">
+        <BackgroundImage />
+        <div className="w-9/12 m-auto border-x-2 border-t-2 border-neutral-900 rounded-t-xl h-96 mt-52 bg-black bg-opacity-50">
+          <div className="text-neutral-200 p-2 h-full text-center justify-center flex flex-col">
+            <h1 className="font-bold text-4xl mb-6">Lorem Ipsum</h1>
+            <span className="mb-6">
+              Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem
+              ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum
+              Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem
+              ipsum Lorem ipsum Lorem ipsum{" "}
+            </span>
+            <Button text="Sätt igång" url="/calculator" />
+          </div>
+        </div>
+        <div className="h-96 bg-neutral-800"></div>
+      </div>
+    </div>
+  );
+};
+
+const BackgroundImage = () => {
+  return (
+    <div className="absolute right-auto w-full top-0 -z-10">
+      <div className="bg-[url('../public/bg2.png')] w-full min-h-[600px] bg-center bg-cover"></div>
     </div>
   );
 };
@@ -28,11 +55,7 @@ function BigImage() {
               </div>
             </div>
             <div className="my-8">
-              <StandardButton
-                url="/calculator"
-                inverted={false}
-                text="Sätt igång"
-              />
+              <Button url="/calculator" text="Sätt igång" />
             </div>
           </div>
         </div>
@@ -193,7 +216,7 @@ function FormSection() {
       />
       <div className="justify-end w-full flex">
         <div className="w-40 justify-end m-4">
-          <StandardButton text="skicka" url="/" inverted={true} />
+          <Button text="skicka" url="/" />
         </div>
       </div>
     </div>
