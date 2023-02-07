@@ -19,7 +19,7 @@ export const NavBar = (props: InterfaceProps): JSX.Element => {
       <div className="lg:hidden">
         <MobileNavbar setNavMenuOpen={props.setNavMenuOpen} />
       </div>
-      <div className="hidden lg:block">
+      <div className="hidden lg:block z-20 bg-black bg-opacity-20 w-full absolute">
         <BigScreenNavbar />
       </div>
     </div>
@@ -34,7 +34,7 @@ const BigScreenNavbar = (): JSX.Element => {
     { url: "/sign-in", name: "Logga in" },
   ];
   return (
-    <div className="h-20 flex text-white bg-black">
+    <div className="h-20 flex text-white">
       <div className="w-5/6 text-center m-auto">
         <div className="flex items-center justify-between">
           <Link href="/">

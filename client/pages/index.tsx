@@ -13,17 +13,22 @@ const Home: NextPage = () => {
 
 function BigImage() {
   return (
-    <div className="w-full relative">
-      <div className="h-96 lg:h-[600px] bg-[url('../public/groceries.jpeg')] bg-cover bg-center">
-        <div className="m-auto flex justify-center text-center h-full">
-          <div className="h-40 lg:h-64 w-64 lg:w-[30rem] translate-y-3/4 lg:translate-y-40 -translate-x-12 md:-translate-x-32 lg:-translate-x-80">
-            <div className="h-full flex flex-col justify-center">
-              <div>
-                <h1 className="text-3xl lg:text-6xl uppercase font-extrabold text-center m-auto justify-center mb-2 lg:mb-6">
-                  skräddarsy din kostplan
+    <div className="relative z-10">
+      <div className="h-[600px] lg:h-[896px] bg-[url('../public/bg2.png')] bg-center bg-cover">
+        <div className="m-auto flex text-center h-full">
+          <div className="flex flex-col border-2 border-neutral-900 w-1/2 border-opacity-50 h-96 m-auto rounded-lg bg-black bg-opacity-40 shadow-2xl">
+            <div className="m-auto flex flex-col items-center">
+              <div className="w-2/3">
+                <h1 className="text-3xl lg:text-5xl uppercase font-extrabold text-center m-auto justify-center text-white">
+                  att äta hälsosamt är en resa
                 </h1>
+                <div className="mt-4">
+                  <span className="text-xl lg:text-2xl font-bold text-center m-auto justify-center text-white">
+                    Låt Gainoteket vara din guide!
+                  </span>
+                </div>
               </div>
-              <div>
+              <div className="my-8">
                 <StandardButton
                   url="/calculator"
                   inverted={false}
@@ -63,8 +68,8 @@ function SiteShowcase() {
     },
   ];
   return (
-    <div className="flex justify-center my-6">
-      <div className="w-5/6">
+    <div className="flex justify-center bg-neutral-900 h-full">
+      <div className="w-5/6 my-12">
         {data.map((item, index) => {
           return index % 2 === 0 ? (
             <div className="justify-center" key={index}>
@@ -79,7 +84,9 @@ function SiteShowcase() {
                     </span>
                   </div>
                   <div className="">
-                    <span className="text-lg">{item.description}</span>
+                    <span className="text-lg text-white">
+                      {item.description}
+                    </span>
                   </div>
                 </div>
               </div>
@@ -97,7 +104,9 @@ function SiteShowcase() {
                     </span>
                   </div>
                   <div className="">
-                    <span className="text-lg">{item.description}</span>
+                    <span className="text-lg text-white">
+                      {item.description}
+                    </span>
                   </div>
                 </div>
               </div>
