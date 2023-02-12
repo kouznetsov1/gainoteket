@@ -27,6 +27,7 @@
 
 # local env files
 /client/.env*.local
+/data_collection/.env
 .env
 
 # vercel
