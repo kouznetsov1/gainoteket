@@ -7,7 +7,7 @@ interface FooterProps {
 
 export default function Footer() {
   return (
-    <div className="bg-black flex bottom-0 w-full h-20">
+    <div className="bg-neutral-900 flex bottom-0 w-full border-t-[1px] border-neutral-600">
       <MobileFooter />
     </div>
   );
@@ -15,8 +15,8 @@ export default function Footer() {
 
 function MobileFooter() {
   return (
-    <div className="w-full flex justify-center">
-      <div className="flex w-3/4 justify-around">
+    <div className="w-full flex justify-center my-6">
+      <div className="flex w-3/4 justify-around text-neutral-200">
         <InternalLinks />
         <SocialLinks />
       </div>
@@ -26,11 +26,11 @@ function MobileFooter() {
 
 function InternalLinks() {
   return (
-    <div className="grid text-white items-center">
-      <Link href="/" className="text-neutral-200">
+    <div className="grid items-center">
+      <Link href="/" className="">
         Om oss
       </Link>
-      <Link href="/" className="text-neutral-200">
+      <Link href="/" className="">
         Kontakt
       </Link>
     </div>
@@ -39,11 +39,11 @@ function InternalLinks() {
 
 function SocialLinks() {
   return (
-    <div className="grid text-white items-center">
-      <a href="facebook.com" className="text-neutral-200">
+    <div className="grid items-center">
+      <a href="facebook.com" className="">
         Facebook
       </a>
-      <a href="instagram.com" className="text-neutral-200">
+      <a href="instagram.com" className="">
         Instagram
       </a>
     </div>

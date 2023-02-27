@@ -9,16 +9,38 @@ import time
 from dotenv import load_dotenv
 import os
 import re
+import json
+import unicodedata
 
 load_dotenv()
 URL = os.getenv("SCRAPE_URL")
 categories = ["Lunch", "Dinner", "Breakfast", "Dessert"]
+recipes = []
+current_category = ""
+
+fraction_map = {
+    '\u00bc': '1/4',
+    '\u00bd': '1/2',
+    '\u00be': '3/4',
+    '\u2153': '1/3',
+    '\u2154': '2/3',
+    '\u2155': '1/5',
+    '\u2156': '2/5',
+    '\u2157': '3/5',
+    '\u2158': '4/5',
+    '\u2159': '1/6',
+    '\u215A': '5/6',
+    '\u215B': '1/8',
+    '\u215C': '3/8',
+    '\u215D': '5/8',
+    '\u215E': '7/8',
+}
 
 def start_scraping():
     for category in categories:
         options = webdriver.ChromeOptions()
-        options.add_extension('cookies.crx')
-        options.add_argument("--start-maximized")
+        #options.add_extension('cookies.crx')
+        options.add_argument("headless")
         driver = webdriver.Chrome(options=options)
         driver.get(URL)
 
@@ -33,6 +55,7 @@ def start_scraping():
         # Switch back to main frame
         driver.switch_to.default_content()
 
+        current_category = category
         scrape_category(driver, category)
 
 def scrape_category(driver, category):
@@ -68,20 +91,25 @@ def scrape_category(driver, category):
 
 def scrape_recipes(driver):    
     xpath = "/html/body/div[2]/div/bb-recipe-category/div/div/div/div[2]/div[{}]/div/div[1]/a"
-    n = 20
+    n = 3
+    i = 1
 
-    for i in range(1, n+1):
-        print("XPATH for recipe link: ", xpath.format(i))
+    while i <= n:
         try:
             print("Clicking recipe at index: {}".format(i))
             link_element = WebDriverWait(driver, 10).until(EC.element_to_be_clickable((By.XPATH, xpath.format(i))))
             recipe_url = link_element.get_attribute("href")
-            get_recipe_information(driver, recipe_url, i)
+
+            # If recipe is in the list, skip it and increase n to increase the number of recipes to scrape
+            if (not get_recipe_information(driver, recipe_url)):
+                n += 1
             driver.switch_to.window(driver.window_handles[0])
+            i += 1
         except Exception as e:
             print("Could not find recipe at index: {}".format(i))
+            i += 1
 
-def get_recipe_information(driver, url, n, div_index=3):
+def get_recipe_information(driver, url, div_index=3):
     print("Open new tab and get recipe information.")
     driver.execute_script("window.open('');")
     driver.switch_to.window(driver.window_handles[1])
@@ -113,6 +141,23 @@ def get_recipe_information(driver, url, n, div_index=3):
     cooking_time = driver.find_element(By.XPATH, x_cooking_time).text
     servings = driver.find_element(By.XPATH, x_servings).text
     name = driver.find_element(By.XPATH, x_name).text
+    category = current_category
+
+    # Extract the numbers, divide macros by servings
+    servings = int(re.findall(r'\d+', servings)[0])
+    cal = int(re.findall(r'\d+', cal)[0]) / int(servings)
+    carbs = int(re.findall(r'\d+', carbs)[0]) / int(servings)
+    protein = int(re.findall(r'\d+', protein)[0]) / int(servings)
+    fat = int(re.findall(r'\d+', fat)[0]) / int(servings)
+
+    # If recipes contain name, then add to list
+    for r in recipes:
+        if r["name"] == name:
+            print("Recipe already in list.")
+            return False
+
+    
+    print("Name: {}".format(name))
 
     # Get ingredients
     ingredients_bs = bs(ingredients_element.get_attribute("innerHTML"), "html.parser")
@@ -120,6 +165,8 @@ def get_recipe_information(driver, url, n, div_index=3):
     for ingredient in ingredients_list:
         text = ingredient.text.replace("\n", "").strip()
         text = re.sub(r'\s+', ' ', text)
+        for fraction, value in fraction_map.items():
+            text = text.replace(fraction, value)
         ingredients.append(text)
 
     # Get directions
@@ -129,22 +176,37 @@ def get_recipe_information(driver, url, n, div_index=3):
         directions.append(direction.text)
 
     # Print recipe information
-    print("Calories: {}".format(cal))
-    print("Carbs: {}".format(carbs))
-    print("Protein: {}".format(protein))
-    print("Fat: {}".format(fat))
-    print("Ingredients: {}".format(ingredients))
-    print("Directions: {}".format(directions))
-    print("Cooking Time: {}".format(cooking_time))
-    print("Servings: {}".format(servings))
     print("Name: {}".format(name))
+
+    recipe = {
+        "name": name,
+        "calories": cal,
+        "carbs": carbs,
+        "protein": protein,
+        "fat": fat,
+        "ingredients": ingredients,
+        "directions": directions,
+        "cooking_time": cooking_time,
+        "servings": servings,
+        "category": category
+    }
+
+    recipes.append(recipe)
+    print("Writing to file...")
+    with open("recipes.json", "w") as f:
+        json.dump(recipes, f, indent=4)
 
     # Go back to previous page
     driver.close()
-    return
+    return True
 
 def main():
     start_scraping()
+
+    print("Writing to file...")
+    with open("recipes.json", "w") as f:
+        json.dump(recipes, f, indent=4)
+
 
 if __name__ == "__main__":
     main()

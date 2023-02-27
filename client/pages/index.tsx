@@ -5,7 +5,7 @@ import { Button } from "@components";
 
 const Home: NextPage = () => {
   return (
-    <div className="h-96 min-h-[calc(100vh-130px)]">
+    <div className="min-h-[calc(100vh-130px)]">
       <div className="hidden lg:block">
         <BigImage />
         <SiteShowcase />
@@ -24,7 +24,11 @@ const Home: NextPage = () => {
             <Button text="Sätt igång" url="/calculator" />
           </div>
         </div>
-        <div className="h-96 bg-neutral-800"></div>
+        <div className="">
+          <div className="text-neutral-300">
+            <SiteShowcase />
+          </div>
+        </div>
       </div>
     </div>
   );
@@ -74,18 +78,18 @@ function SiteShowcase() {
       title: "1. Räkna ut ditt kaloribehov",
       description:
         "Med Gainotekets egna kaloriräknare räknar du enkelt ut vilka behov du har för dina mål.",
-      image: require("../public/index_placeholder.jpg"),
+      image: require("./../public/bg1.png"),
     },
     {
       title: "2. Välj vad du vill äta",
       description:
         "Här väljer du vad du vill äta och ändrar näringsvärden för att passa det du valde i steg 1.",
-      image: require("../public/index_placeholder.jpg"),
+      image: require("./../public/bg1.png"),
     },
     {
       title: "3. Kostplan färdig!",
       description: "Exportera din kostplan och nå dina mål!",
-      image: require("../public/index_placeholder.jpg"),
+      image: require("./../public/bg1.png"),
     },
   ];
   return (
@@ -96,7 +100,7 @@ function SiteShowcase() {
             <div className="justify-center" key={index}>
               <div className="text-center py-2">
                 <div className="bg-gray-200 flex m-auto w-3/4 h-56 my-6">
-                  <span className="text-xl flex m-auto">Bild1</span>
+                  <span className="text-xl flex m-auto text-black">Bild</span>
                 </div>
                 <div className="m-auto">
                   <div className="mb-4 text-primary">
@@ -105,9 +109,7 @@ function SiteShowcase() {
                     </span>
                   </div>
                   <div className="">
-                    <span className="text-lg text-white">
-                      {item.description}
-                    </span>
+                    <span className="text-lg">{item.description}</span>
                   </div>
                 </div>
               </div>
@@ -116,7 +118,7 @@ function SiteShowcase() {
             <div className="justify-center" key={index}>
               <div className="text-center py-2">
                 <div className="bg-gray-200 flex m-auto w-3/4 h-56 my-6">
-                  <span className="text-black text-xl flex m-auto">Bild1</span>
+                  <span className="text-black text-xl flex m-auto">Bild</span>
                 </div>
                 <div className="m-auto">
                   <div className="mb-4 text-primary">
@@ -125,9 +127,7 @@ function SiteShowcase() {
                     </span>
                   </div>
                   <div className="">
-                    <span className="text-lg text-white">
-                      {item.description}
-                    </span>
+                    <span className="text-lg">{item.description}</span>
                   </div>
                 </div>
               </div>
@@ -149,18 +149,18 @@ function SiteShowcase2() {
       title: "1. Räkna ut ditt kaloribehov",
       description:
         "Med prooly:s egna kaloriräknare räknar du enkelt ut vilka behov du har för dina mål.",
-      image: require("../public/index_placeholder.jpg"),
+      image: require("./../public/bg1.png"),
     },
     {
       title: "2. Välj vad du vill äta",
       description:
         "Här väljer du vad du vill äta och ändrar näringsvärden för att passa det du valde i steg 1.",
-      image: require("../public/index_placeholder.jpg"),
+      image: require("./../public/bg1.png"),
     },
     {
       title: "3. Kostplan färdig!",
       description: "Exportera din kostplan och nå dina mål!",
-      image: require("../public/index_placeholder.jpg"),
+      image: require("./../public/bg1.png"),
     },
   ];
   return (
