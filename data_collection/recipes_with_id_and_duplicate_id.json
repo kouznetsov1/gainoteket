@@ -1,0 +1,492 @@
+[
+    {
+        "name": "Krispig kyckling med nudelsallad",
+        "id": 1,
+        "duplicate_id": 64
+    },
+    {
+        "name": "Kyckling och champinjoner i ostrons\u00e5s med morotssallad",
+        "id": 2,
+        "duplicate_id": 65
+    },
+    {
+        "name": "Kyckling- och gr\u00f6nsakspanna med rostad potatis och citronyoghurt",
+        "id": 3,
+        "duplicate_id": 66
+    },
+    {
+        "name": "Vitl\u00f6ksstekt kyckling med kr\u00e4mig risotto och k\u00f6rsb\u00e4rstomater",
+        "id": 4,
+        "duplicate_id": 68
+    },
+    {
+        "name": "Kryddgrillad kyckling med mangosalsa och couscousfyllda salladsblad",
+        "id": 5,
+        "duplicate_id": 69
+    },
+    {
+        "name": "Kyckling- och linsgryta med ingef\u00e4ra och kardemumma",
+        "id": 6,
+        "duplicate_id": 71
+    },
+    {
+        "name": "Citronkyckling och b\u00f6nor med rosmarin och rostade gr\u00f6nsaker",
+        "id": 7,
+        "duplicate_id": 72
+    },
+    {
+        "name": "Ankbr\u00f6st och k\u00e5lsallad med apelsin",
+        "id": 8,
+        "duplicate_id": 75
+    },
+    {
+        "name": "Kryddstekt kyckling med tabbouleh och avokado",
+        "id": 9,
+        "duplicate_id": 76
+    },
+    {
+        "name": "Grillad kycklingfil\u00e9 med s\u00f6tpotatissallad och yoghurt",
+        "id": 10,
+        "duplicate_id": 77
+    },
+    {
+        "name": "Kalkonf\u00e4rsbiffar med rosmarinrostade jord\u00e4rtskockor",
+        "id": 11,
+        "duplicate_id": 79
+    },
+    {
+        "name": "Pad Thai",
+        "id": 12,
+        "duplicate_id": 80
+    },
+    {
+        "name": "Coq au vin p\u00e5 kyckling med sallad",
+        "id": 13,
+        "duplicate_id": 81
+    },
+    {
+        "name": "Kycklingfil\u00e9 i currybuljong med socker\u00e4rter och nudlar",
+        "id": 14,
+        "duplicate_id": 82
+    },
+    {
+        "name": "Kycklingfil\u00e9 med matvete och citron- och dragonricotta",
+        "id": 15,
+        "duplicate_id": 83
+    },
+    {
+        "name": "Kalkon med ratatouille och oregano",
+        "id": 16,
+        "duplicate_id": ""
+    },
+    {
+        "name": "Kyckling \u201dharissa\u201d med rostade knippmor\u00f6tter",
+        "id": 17,
+        "duplicate_id": ""
+    },
+    {
+        "name": "Sesamstekt kyckling med brysselk\u00e5l, honung och soja",
+        "id": 18,
+        "duplicate_id": ""
+    },
+    {
+        "name": "Kryddstekt kyckling med gurka och avokado",
+        "id": 19,
+        "duplicate_id": ""
+    },
+    {
+        "name": "Kyckling med avokadosallad och rostad s\u00f6tpotatis",
+        "id": 20,
+        "duplicate_id": ""
+    },
+    {
+        "name": "Kalkonf\u00e4rslasagne med hj\u00e4rtsallad",
+        "id": 21,
+        "duplicate_id": ""
+    },
+    {
+        "name": "Kycklingragu med svamp och senap",
+        "id": 22,
+        "duplicate_id": ""
+    },
+    {
+        "name": "Spaghetti med linsbolognese",
+        "id": 23,
+        "duplicate_id": 115
+    },
+    {
+        "name": "Rostad blomk\u00e5l med kapris och oliver",
+        "id": 24,
+        "duplicate_id": 93
+    },
+    {
+        "name": "Quinoa med rostade rotfrukter och hummus",
+        "id": 25,
+        "duplicate_id": 94
+    },
+    {
+        "name": "Veggie wrap med gr\u00f6nsaksbullar, \u00e4rtguacamole och mangosalsa",
+        "id": 26,
+        "duplicate_id": 95
+    },
+    {
+        "name": "Rostad blomk\u00e5l och kik\u00e4rter med avokador\u00f6ra",
+        "id": 27,
+        "duplicate_id": 100
+    },
+    {
+        "name": "Lins- och zucchinigryta med paprika",
+        "id": 28,
+        "duplicate_id": 104
+    },
+    {
+        "name": "Tofu satay",
+        "id": 29,
+        "duplicate_id": ""
+    },
+    {
+        "name": "Ratatouille med \u00f6rtrostad potatis",
+        "id": 30,
+        "duplicate_id": ""
+    },
+    {
+        "name": "Ratatouille med gr\u00f6n couscous och hummus",
+        "id": 31,
+        "duplicate_id": ""
+    },
+    {
+        "name": "Spaghetti med svamp och rotfruktss\u00e5s",
+        "id": 32,
+        "duplicate_id": ""
+    },
+    {
+        "name": "Vegetarisk bolognese",
+        "id": 33,
+        "duplicate_id": ""
+    },
+    {
+        "name": "R\u00f6dbetsbourguignon med mandelpotatispur\u00e9",
+        "id": 34,
+        "duplicate_id": ""
+    },
+    {
+        "name": "Sojamarinerad tofu med kokosris",
+        "id": 35,
+        "duplicate_id": ""
+    },
+    {
+        "name": "Blomk\u00e5lspur\u00e9 med kik\u00e4rtor, portabello och dukkah",
+        "id": 36,
+        "duplicate_id": ""
+    },
+    {
+        "name": "Rostade rotfrukter med salsa verde och vita b\u00f6nor",
+        "id": 37,
+        "duplicate_id": ""
+    },
+    {
+        "name": "Ljummen guacamolepasta med paprika- och svartb\u00f6nsallad",
+        "id": 38,
+        "duplicate_id": ""
+    },
+    {
+        "name": "Rostade betor och persiljer\u00f6tter med salsa verde",
+        "id": 39,
+        "duplicate_id": ""
+    },
+    {
+        "name": "Tomat- och morotssoppa med linser",
+        "id": 40,
+        "duplicate_id": ""
+    },
+    {
+        "name": "Rostade rotfrukter med timjan och kik\u00e4rtsr\u00f6ra",
+        "id": 41,
+        "duplicate_id": ""
+    },
+    {
+        "name": "Zucchini- och quinoabiffar med f\u00e4nk\u00e5lstzatsiki i pitabr\u00f6d",
+        "id": 42,
+        "duplicate_id": 108
+    },
+    {
+        "name": "Nachos med kryddiga svarta b\u00f6nor",
+        "id": 43,
+        "duplicate_id": 109
+    },
+    {
+        "name": "Lasagne med zucchini och linser",
+        "id": 45,
+        "duplicate_id": 120
+    },
+    {
+        "name": "Tomatsoppa med krispig pesto- och mozzarellatoast",
+        "id": 46,
+        "duplicate_id": 122
+    },
+    {
+        "name": "B\u00f6n- och majsburgare med avokadokr\u00e4m",
+        "id": 47,
+        "duplicate_id": 123
+    },
+    {
+        "name": "R\u00f6d linssoppa och mackor med hummus",
+        "id": 48,
+        "duplicate_id": 125
+    },
+    {
+        "name": "Blomk\u00e5lsbolognese med mozzarellasallad",
+        "id": 49,
+        "duplicate_id": ""
+    },
+    {
+        "name": "Gratinerade nachos med mangosalsa",
+        "id": 50,
+        "duplicate_id": ""
+    },
+    {
+        "name": "Morotssoppa med ingef\u00e4ra och chili",
+        "id": 53,
+        "duplicate_id": ""
+    },
+    {
+        "name": "Kik\u00e4rtsburgare med avokadokr\u00e4m",
+        "id": 55,
+        "duplicate_id": ""
+    },
+    {
+        "name": "Parmesanrostad blomk\u00e5l med mandel och citronkr\u00e4m",
+        "id": 56,
+        "duplicate_id": ""
+    },
+    {
+        "name": "Dhal, indisk linsgryta",
+        "id": 57,
+        "duplicate_id": ""
+    },
+    {
+        "name": "Risotto med sojab\u00f6nor och gremolata",
+        "id": 58,
+        "duplicate_id": ""
+    },
+    {
+        "name": "Rostade rotfrukter med yoghurtkr\u00e4m",
+        "id": 59,
+        "duplicate_id": ""
+    },
+    {
+        "name": "R\u00f6dbetsris med gr\u00f6nk\u00e5l, pepparot och pumpak\u00e4rnor",
+        "id": 60,
+        "duplicate_id": ""
+    },
+    {
+        "name": "Lasagne med paprika och linser",
+        "id": 61,
+        "duplicate_id": ""
+    },
+    {
+        "name": "Zucchinibiffar med rostad potatis och romescos\u00e5s",
+        "id": 62,
+        "duplicate_id": ""
+    },
+    {
+        "name": "Morotsr\u00e5rakor med kik\u00e4rtsr\u00f6ra och ost",
+        "id": 63,
+        "duplicate_id": ""
+    },
+    {
+        "name": "Kyckling med apelsin och rosmarin",
+        "id": 67,
+        "duplicate_id": ""
+    },
+    {
+        "name": "Kyckling i tomats\u00e5s med matvete",
+        "id": 70,
+        "duplicate_id": ""
+    },
+    {
+        "name": "Saffranskyckling",
+        "id": 73,
+        "duplicate_id": ""
+    },
+    {
+        "name": "Kycklingj\u00e4rpar med tzatziki",
+        "id": 74,
+        "duplicate_id": ""
+    },
+    {
+        "name": "Drumsticks med s\u00f6tstark dipps\u00e5s",
+        "id": 78,
+        "duplicate_id": ""
+    },
+    {
+        "name": "Pasta carbonara med torrsaltat bacon",
+        "id": 84,
+        "duplicate_id": ""
+    },
+    {
+        "name": "Pok\u00e9 bowl med gulbetor, limedressing och sesams\u00e5s",
+        "id": 85,
+        "duplicate_id": 112
+    },
+    {
+        "name": "Vegetarisk bourguignon",
+        "id": 86,
+        "duplicate_id": 113
+    },
+    {
+        "name": "Tabbouleh p\u00e5 matvete och s\u00e4songens rotfrukter",
+        "id": 87,
+        "duplicate_id": 114
+    },
+    {
+        "name": "Ratatouille p\u00e5 sk\u00f6rdegr\u00f6nsaker",
+        "id": 89,
+        "duplicate_id": 119
+    },
+    {
+        "name": "Fajitas med rostade gr\u00f6nsaker, svarta b\u00f6nor och guacamole",
+        "id": 90,
+        "duplicate_id": 121
+    },
+    {
+        "name": "Vegansk tacof\u00e4rs p\u00e5 n\u00f6tter",
+        "id": 91,
+        "duplicate_id": 124
+    },
+    {
+        "name": "Rispappersrullar med cashewdipp",
+        "id": 92,
+        "duplicate_id": ""
+    },
+    {
+        "name": "Rostad rotselleri med svamp och gnocchi",
+        "id": 96,
+        "duplicate_id": ""
+    },
+    {
+        "name": "Potatis- och jord\u00e4rtskockssoppa med \u00e4ppelkrisp",
+        "id": 97,
+        "duplicate_id": ""
+    },
+    {
+        "name": "\u00c4rtbiffar med okokta gula \u00e4rter",
+        "id": 98,
+        "duplicate_id": ""
+    },
+    {
+        "name": "Blomk\u00e5lsbolognese med mandel",
+        "id": 99,
+        "duplicate_id": ""
+    },
+    {
+        "name": "Vegansk Bolognese",
+        "id": 101,
+        "duplicate_id": ""
+    },
+    {
+        "name": "\u00c4rtig spenatsoppa",
+        "id": 102,
+        "duplicate_id": ""
+    },
+    {
+        "name": "Overnight Oats med kaffe",
+        "id": 103,
+        "duplicate_id": ""
+    },
+    {
+        "name": "Kr\u00e4migt kamutvete med gr\u00f6n pytt",
+        "id": 105,
+        "duplicate_id": ""
+    },
+    {
+        "name": "Halloumipytt med \u00f6rtsm\u00f6r och senapskr\u00e4m",
+        "id": 106,
+        "duplicate_id": ""
+    },
+    {
+        "name": "Linscurry med pumpa, kokos och lime",
+        "id": 107,
+        "duplicate_id": ""
+    },
+    {
+        "name": "Halloumigryta med aubergine och couscous",
+        "id": 110,
+        "duplicate_id": ""
+    },
+    {
+        "name": "B\u00f6nburgare p\u00e5 kidneyb\u00f6nor med avokador\u00f6ra",
+        "id": 111,
+        "duplicate_id": ""
+    },
+    {
+        "name": "Blomk\u00e5lspizza med gr\u00f6nk\u00e5l, pesto och fikon",
+        "id": 116,
+        "duplicate_id": ""
+    },
+    {
+        "name": "B\u00f6nlasagne med spenat och zucchini",
+        "id": 117,
+        "duplicate_id": ""
+    },
+    {
+        "name": "Vegocarbonara med svamp",
+        "id": 118,
+        "duplicate_id": ""
+    },
+    {
+        "name": "B\u00f6nlasagne",
+        "id": 126,
+        "duplicate_id": ""
+    },
+    {
+        "name": "Overnight oats med chiafr\u00f6n och \u00e4pple",
+        "id": 127,
+        "duplicate_id": 136
+    },
+    {
+        "name": "Smoothie med passionsfrukt, ingef\u00e4ra och banan",
+        "id": 128,
+        "duplicate_id": 137
+    },
+    {
+        "name": "Chiasmoothie med sharon",
+        "id": 129,
+        "duplicate_id": 138
+    },
+    {
+        "name": "Frukostsallad med avokado och gr\u00f6nk\u00e5l",
+        "id": 130,
+        "duplicate_id": ""
+    },
+    {
+        "name": "Frukostbowl med yoghurt och grapefrukt",
+        "id": 131,
+        "duplicate_id": 139
+    },
+    {
+        "name": "Chiapudding med granola",
+        "id": 132,
+        "duplicate_id": 140
+    },
+    {
+        "name": "Havregrynsgr\u00f6t med banan och bl\u00e5b\u00e4r",
+        "id": 133,
+        "duplicate_id": 141
+    },
+    {
+        "name": "\u00c4ppelgr\u00f6t",
+        "id": 134,
+        "duplicate_id": 142
+    },
+    {
+        "name": "Gr\u00f6n omelett med spenat och avokado ",
+        "id": 135,
+        "duplicate_id": ""
+    },
+    {
+        "name": "Cajasmoothie",
+        "id": 143,
+        "duplicate_id": ""
+    }
+]

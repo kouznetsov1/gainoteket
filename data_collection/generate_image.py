@@ -31,15 +31,15 @@ def handle_recipe(recipe, id):
     recipe_name = recipe["name"]
 
     # Translate recipe name to english
-    #prompt_string = f"Translate to English:\n{recipe_name} =>"
-    #recipe_english = translate_text(prompt_string)
+    prompt_string = f"Translate to English:\n{recipe_name} =>"
+    recipe_english = translate_text(prompt_string)
 
-    #print("Generating image for recipe: {}".format(recipe_english))
+    print("Generating image for recipe: {}".format(recipe_english))
 
-    #dalle_prompt = f"{recipe_english}, centered, professional food photography"
-    #image_url = generate_image(dalle_prompt)
+    dalle_prompt = f"{recipe_english}, centered, professional food photography"
+    image_url = generate_image(dalle_prompt)
 
-    #save_image(image_url, id)
+    save_image(image_url, id)
 
     directions = recipe["directions"]
     i = 0
