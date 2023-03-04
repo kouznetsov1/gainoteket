@@ -13,21 +13,19 @@ def main():
     openai.organization = os.getenv("OPENAI_ORG")
     openai.api_key = os.getenv("OPENAI_API_KEY")
 
-    with open("recipes.json", "r") as f:
+    with open("recipes_with_id.json", "r") as f:
         data = json.load(f)
 
-    id = 1
     for recipe in data:
+        id = recipe["id"]
         handle_recipe(recipe, id)
-        id += 1
     
-    with open("recipes_with_id.json", "w", encoding="utf-8") as f:
+    with open("recipes_with_id_and_images.json", "w", encoding="utf-8") as f:
         json.dump(updated_recipes, f, indent=4, ensure_ascii=False)
 
 
 def handle_recipe(recipe, id):
     recipe["image_url"] = IMG_URL + str(id) + ".png"
-    recipe["id"]= id
     recipe_name = recipe["name"]
 
     # Translate recipe name to english
@@ -36,7 +34,7 @@ def handle_recipe(recipe, id):
 
     print("Generating image for recipe: {}".format(recipe_english))
 
-    dalle_prompt = f"{recipe_english}, centered, professional food photography"
+    dalle_prompt = f"{recipe_english}, centered, professional food photography fit for instagram"
     image_url = generate_image(dalle_prompt)
 
     save_image(image_url, id)
