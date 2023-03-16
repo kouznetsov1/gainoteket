@@ -128,7 +128,7 @@ func setupMongoDB() (*mongo.Client, *mongo.Collection, error) {
 	}
 
 	// Choose the database and collection
-	collection := client.Database("recipes").Collection("recipes")
+	collection := client.Database("gainoteket").Collection("recipes")
 
 	return client, collection, nil
 }
